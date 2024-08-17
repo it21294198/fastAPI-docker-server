@@ -2,6 +2,8 @@
 
 [Read More](https://fastapi.tiangolo.com/deployment/docker/#one-process-per-container)
 
+[Referenced Video](https://youtu.be/DQwAX5pS4E8?si=6OSj-h9llq5mc8SW)
+
 ## File and folder structure
 
 ```

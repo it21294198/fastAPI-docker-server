@@ -2,7 +2,7 @@
 
 [Read More](https://fastapi.tiangolo.com/deployment/docker/#one-process-per-container)
 
-1. file and folder structure
+## File and folder structure
 
 ```
 server/
@@ -47,10 +47,10 @@ server/
     deactivate
     ```
 
-4. Install FastAPI(add here if when new lib is added)
+4. Install FastAPI to python
 
     ```
-    pip3 install fastapi pydantic opencv-python-headless numpy aiofiles
+    pip3 install fastapi pydantic
     ```
 
 5. Run server
@@ -59,40 +59,32 @@ server/
     fastapi dev main.py
     ```
 
-6. Add all dependencies
+6. Create a `requirements.txt` File
 
-```
-pip install fastapi pydantic
-```
-or
-```
-pip3 install fastapi pydantic
-```
+    ```
+    pip freeze > requirements.txt
+    ```
 
-7. Create a `requirements.txt` File
+7. To build the Docker image, run:
 
-```
-pip freeze > requirements.txt
-```
+    ```
+    docker build -t myfastapiapp .
+    ```
 
-8. To build the Docker image, run:
+8. To run the container:
 
-```
-docker build -t myfastapiapp .
-```
+    ```
+    docker run -d --name myfastapiapp -p 8000:8000 myfastapiapp
+    ```
 
-9. To run the container:
+9. If using `docker-compose`,
 
-```
-docker run -d --name myfastapiapp -p 8000:8000 myfastapiapp
-```
+    ```
+    docker-compose up --build
+    ```
 
-10. If using `docker-compose`,
+10. Check on
 
-```
-docker-compose up --build
-```
+    [http://localhost:8000](http://localhost:8000)
 
-[http://localhost:8000](http://localhost:8000)
-
-[http://localhost:8000/docs](http://localhost:8000/docs)
+    [http://localhost:8000/docs](http://localhost:8000/docs)
